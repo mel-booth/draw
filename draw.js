@@ -28,4 +28,8 @@ function draw(x, y){
 
 }
 
+canvas.addEventListener('mousedown', onMouseDown, false)
+canvas.addEventListener('mouseup', onMouseUp, false)
+canvas.addEventListener('mousemove', onMouseMove, false)
+
 defaultCanvas()
