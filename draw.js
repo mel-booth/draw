@@ -1,45 +1,29 @@
-var canvas = document.getElementById('paper')
-var context = canvas.getContext('2d')
-var mousedown = false
-var lastx = null
-var lasty = null
+var canvas = document.getElementById('paper');
+var context = canvas.getContext('2d');
 
-function defaultCanvas(){
-  context.lineWidth = 5
-  context.lineCap = 'round'
-  context.strokeStyle = '#000000'
+var mouse = {x: 0, y: 0};
+
+canvas.addEventListener('mousemove', function(evt) {
+  mouse.x = evt.pageX - this.offsetLeft;
+  mouse.y = evt.pageY - this.offsetTop;
+}, false);
+
+context.lineWidth = 3;
+context.lineCap = 'round';
+context.strokeStyle = '#000000';
+
+canvas.addEventListener('mousedown', function(evt) {
+    context.beginPath();
+    context.moveTo(mouse.x, mouse.y);
+
+    canvas.addEventListener('mousemove', draw, false);
+}, false);
+
+canvas.addEventListener('mouseup', function() {
+    canvas.removeEventListener('mousemove', draw, false);
+}, false);
+
+var draw = function() {
+    context.lineTo(mouse.x, mouse.y);
+    context.stroke();
 }
-
-function onMouseDown(evt){
-  mousedown = true
-}
-
-function onMouseUp(evt){
-  mousedown = false
-}
-
-function onMouseMove(evt){
-  var x = evt.clientX
-  var y = evt.clientY
-  evt.preventDefault()
-  if (mousedown){
-    draw(x, y)
-  }
-}
-
-function draw(x, y){
-  context.beginPath()
-  if (lastx > 0 && lasty >0){
-    context.moveTo(lastx, lasty)
-  }
-  context.lineTo(x, y)
-  context.stroke()
-  context.closePath()
-  lastx = x
-  lasty = y
-}
-canvas.addEventListener('mousedown', onMouseDown, false)
-canvas.addEventListener('mouseup', onMouseUp, false)
-canvas.addEventListener('mousemove', onMouseMove, false)
-
-defaultCanvas()
