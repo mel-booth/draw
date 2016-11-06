@@ -1,6 +1,8 @@
 var canvas = document.getElementById('paper')
 var context = canvas.getContext('2d')
 var mousedown = false
+var lastx = null
+var lasty = null
 
 function defaultCanvas(){
   context.lineWidth = 5
@@ -27,11 +29,14 @@ function onMouseMove(evt){
 
 function draw(x, y){
   context.beginPath()
-  context.moveTo(x, y)
+  if (lastx > 0 && lasty >0){
+    context.moveTo(lastx, lasty)
+  }
   context.lineTo(x, y)
   context.stroke()
   context.closePath()
-
+  lastx = x
+  lasty = y
 }
 canvas.addEventListener('mousedown', onMouseDown, false)
 canvas.addEventListener('mouseup', onMouseUp, false)
