@@ -3,13 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>draw</title>
-    <link href="canvas.css" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
 
   </head>
   <body>
+    <form id="tools" action="index.html" method="post">
+      <button type="submit" name="button">Fine</button>
+      <button type="submit" name="button">Medium</button>
+      <button type="submit" name="button">Thick</button>
+    </form>
 
-    <canvas id="paper" width="800" height="600"></canvas>
+    <form id="colours" action="index.html" method="post">
+      <button type="submit" name="button">Black</button>
+      <button type="submit" name="button">Red</button>
+      <button type="submit" name="button">Orange</button>
+      <button type="submit" name="button">Yellow</button>
+      <button type="submit" name="button">Green</button>
+      <button type="submit" name="button">Blue</button>
+      <button type="submit" name="button">Indigo</button>
+      <button type="submit" name="button">Violet</button>
+    </form>
+
+    <form id="options" action="index.html" method="post">
+      <button type="submit" name="button">Save</button>
+      <button type="submit" name="button">Share</button>
+    </form>
+    <canvas id="paper1" width="500" height="250"></canvas>
+    <canvas id="paper2" width="500" height="250"></canvas>
+    <canvas id="paper3" width="500" height="250"></canvas>
+    <canvas id="paper4" width="500" height="250"></canvas>
 
   </body>
-  <script type="text/javascript" src='draw.js'></script>
+  <script type="text/javascript" src='paper.js'></script>
+
 </html>

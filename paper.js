@@ -1,4 +1,4 @@
-var canvas = document.getElementById('paper');
+var canvas = document.getElementById('paper1');
 var context = canvas.getContext('2d');
 
 var mouse = {x: 0, y: 0};
