@@ -1,5 +1,6 @@
 var canvas = document.getElementById('paper1');
 var context = canvas.getContext('2d');
+var images = []
 
 var mouse = {x: 0, y: 0};
 
@@ -28,14 +29,15 @@ var draw = function() {
     context.stroke();
 }
 
-// var drawButton = document.getElementById('draw').addEventListener('click', previousImageData){
-//   var previousImageData = context.getImageData(left, top, 500px, 10px)
-// })
-
-//How to show certain area of canvas...doesn't work. Yet
-var drawButton = document.getElementById("draw")
-draw.addEventListener("click", previousImageData())
-
-var previousImageData = function(context){
-  context.getImageData(0px, 0px, 500px, 20px)
+document.getElementById('Save').onclick=function(e){
+  e.preventDefault()
+  var img = canvas.toDataURL("image/png")
+  document.write('<img src="'+img+'"/>')
 }
+
+//To save images to images array - not working yet.
+// document.getElementById('Save').onclick=function(e){
+//   e.preventDefault()
+//   var img = canvas.toDataURL("image/png")
+//   images.push(img)
+// }
