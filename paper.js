@@ -1,7 +1,22 @@
 var canvas = document.getElementById('paper1');
 var context = canvas.getContext('2d');
+var images = []
 
 var mouse = {x: 0, y: 0};
+var test = document.createElement('img')
+test.src = "https://pixabay.com/static/uploads/photo/2015/10/01/21/39/background-image-967820_960_720.jpg"
+console.log('adding a test image');
+
+
+document.getElementById('Save').onclick=function(e){
+  e.preventDefault()
+  var img = canvas.toDataURL("image/png")
+  document.body.appendChild(test)
+  console.log(img);
+}
+// 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAGQCAYAAABYs5LGAAAcvUlEQ…QIECBQIyDQa9yNSoAAAQIEUgUEeiqnYgQIECBAoEbg/wFWiy6vijmVoAAAAABJRU5ErkJggg=='
+
+
 
 canvas.addEventListener('mousemove', function(evt) {
   mouse.x = evt.pageX - this.offsetLeft;
@@ -28,14 +43,23 @@ var draw = function() {
     context.stroke();
 }
 
-// var drawButton = document.getElementById('draw').addEventListener('click', previousImageData){
-//   var previousImageData = context.getImageData(left, top, 500px, 10px)
-// })
+// document.getElementById('Save').onclick=function(e){
+//   e.preventDefault()
+//   var img = canvas.toDataURL("image/png")
+//   document.getElementById('gallery').appendChild(test)
+//   console.log(img);
+//   document.write('<img src="'+img+'"/>')
+// }
 
-//How to show certain area of canvas...doesn't work. Yet
-var drawButton = document.getElementById("draw")
-draw.addEventListener("click", previousImageData())
+//To save images to images array - not working yet.
+// document.getElementById('Save').onclick=function(e){
+//   e.preventDefault()
+//   var img = canvas.toDataURL("image/png")
+//   images.push(img)
+// }
 
-var previousImageData = function(context){
-  context.getImageData(0px, 0px, 500px, 20px)
-}
+// function convertCanvasToImage(canvas) {
+// var image = new Image();
+// image.src = canvas.toDataURL("image/png");
+// return image;
+// }
