@@ -4,12 +4,19 @@ var images = []
 
 var mouse = {x: 0, y: 0};
 var test = document.createElement('img')
-test.src = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAGQCAYAAABYs5LGAAAcvUlEQ…QIECBQIyDQa9yNSoAAAQIEUgUEeiqnYgQIECBAoEbg/wFWiy6vijmVoAAAAABJRU5ErkJggg==')"
+test.src = "https://pixabay.com/static/uploads/photo/2015/10/01/21/39/background-image-967820_960_720.jpg"
 console.log('adding a test image');
 
+
+document.getElementById('Save').onclick=function(e){
+  e.preventDefault()
+  var img = canvas.toDataURL("image/png")
+  document.body.appendChild(test)
+  console.log(img);
+}
 // 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAGQCAYAAABYs5LGAAAcvUlEQ…QIECBQIyDQa9yNSoAAAQIEUgUEeiqnYgQIECBAoEbg/wFWiy6vijmVoAAAAABJRU5ErkJggg=='
 
-document.body.appendChild(test)
+
 
 canvas.addEventListener('mousemove', function(evt) {
   mouse.x = evt.pageX - this.offsetLeft;
@@ -36,12 +43,13 @@ var draw = function() {
     context.stroke();
 }
 
-document.getElementById('Save').onclick=function(e){
-  e.preventDefault()
-  var img = canvas.toDataURL("image/png")
-  console.log(img);
-  // document.write('<img src="'+img+'"/>')
-}
+// document.getElementById('Save').onclick=function(e){
+//   e.preventDefault()
+//   var img = canvas.toDataURL("image/png")
+//   document.getElementById('gallery').appendChild(test)
+//   console.log(img);
+//   document.write('<img src="'+img+'"/>')
+// }
 
 //To save images to images array - not working yet.
 // document.getElementById('Save').onclick=function(e){
@@ -50,8 +58,8 @@ document.getElementById('Save').onclick=function(e){
 //   images.push(img)
 // }
 
-function convertCanvasToImage(canvas) {
-var image = new Image();
-image.src = canvas.toDataURL("image/png");
-return image;
-}
+// function convertCanvasToImage(canvas) {
+// var image = new Image();
+// image.src = canvas.toDataURL("image/png");
+// return image;
+// }
