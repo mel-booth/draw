@@ -40,7 +40,7 @@ document.getElementById('Save').onclick=function(e){
   e.preventDefault()
   var img = canvas.toDataURL("image/png")
   console.log(img);
-  document.write('<img src="'+img+'"/>')
+  // document.write('<img src="'+img+'"/>')
 }
 
 //To save images to images array - not working yet.
