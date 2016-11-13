@@ -4,21 +4,28 @@
     <meta charset="utf-8">
     <title>draw tag</title>
     <link href="main.css" rel="stylesheet" type="text/css">
-
   </head>
+
   <body>
-    <div id="gallery">
+    <button id="draw"><a href="#openModal">DRAW</a></button>
 
+  <div id="openModal" class="popupDraw">
+    <div>	<a href="#close" title="Close" class="close">X</a>
+      <h2>Draw something...</h2>
+      <form id="tools">
+        <button type="submit" name="button">Pencil</button>
+        <button type="submit" name="button">Eraser</button>
+        <button type="submit" name="button">Clear</button>
+      </form>
 
-    <button id="draw" class="modal">Draw</button>
-    <div id="popupDraw">
-      <div id="popupDrawContent">
-        <p>
-          This is where the canvas should appear...
-        </p>
-      </div>
+      <form id="options">
+        <button type="submit" name="button">Cancel</button>
+        <button  onClick="saveCanvas();" id="Save">Done</button>
+      </form>
+    <canvas id="paper1" width="500" height="400"></canvas>
     </div>
-    </div>
+  </div>
+
   </body>
-
+<script type="text/javascript" src='paper.js'></script>
 </html>

@@ -17,7 +17,6 @@ document.getElementById('Save').onclick=function(e){
 // 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAGQCAYAAABYs5LGAAAcvUlEQ…QIECBQIyDQa9yNSoAAAQIEUgUEeiqnYgQIECBAoEbg/wFWiy6vijmVoAAAAABJRU5ErkJggg=='
 
 
-
 canvas.addEventListener('mousemove', function(evt) {
   mouse.x = evt.pageX - this.offsetLeft;
   mouse.y = evt.pageY - this.offsetTop;
