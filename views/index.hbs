@@ -1,2 +1,32 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<button id="draw"><a href="#modal">draw</a></button>
+
+<div id="gallery">
+      <h1>gallery</h1>
+    </div>
+
+      <div id="modal" class="popupDraw">
+        <div>	<a href="#close" title="Close" class="close">X</a>
+          <div class="colours">
+            <div id="black" onclick="colour(this)"></div>
+            <div id="green" onclick="colour(this)"></div>
+            <div id="violet" onclick="colour(this)"></div>
+            <div id="orange" onclick="colour(this)"></div>
+            <div id="blue" onclick="colour(this)"></div>
+            <div id="grey" onclick="colour(this)"></div>
+            <div id="red" onclick="colour(this)"></div>
+            <div id="yellow" onclick="colour(this)"></div>
+            <div id="indigo" onclick="colour(this)"></div>
+            <div id="white" onclick="colour(this)"></div>
+          </div>
+
+          <div class="canvas-con">
+            <canvas id="paper" height="300" width="400"></canvas>
+          </div>
+
+          <div class="buttons">
+            <input type="submit" value="Add to Gallery" id="save">
+            <input type="submit" value="Clear" onclick="clearCanvas(canvas,ctx)">
+          </div>
