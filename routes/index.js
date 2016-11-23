@@ -29,7 +29,12 @@ router.get('/:id', function(req, res, next) {
 router.post('/', function(req, res, next) {
   db.postImage(req.body.url)
   .then(function(){
-    console.log('Image posted!');
+    db.getImages()
+  .then(function(images){
+    var image = images.pop()
+    console.log(image);
+      res.json({images: image})
+    })
   })
   .catch(function(err){
     console.log(err)
